@@ -1,6 +1,6 @@
-execute 'pip install supervisor' do
+pip 'supervisor' do
   user 'root'
-  not_if 'test `which supervisord`'
+  version '4.0.3'
 end
 
 template '/etc/supervisord.conf' do
