@@ -5,4 +5,5 @@ include_recipe './supervisor/install'
 
 include_seasoning if respond_to?(:include_seasoning)
 
+include_recipe './supervisor/service'
 include_recipe './supervisor/start'
