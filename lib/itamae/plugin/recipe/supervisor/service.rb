@@ -7,11 +7,13 @@ when /rhel-6\.(.*?)/
     mode '755'
   end
 when /rhel-7\.(.*?)/
+  pip_path = run_command('which pip').stdout
   template '/etc/systemd/system/supervisord.service' do
     user 'root'
     owner 'root'
     group 'root'
     mode '755'
+    variables dir_path: File.dirname(pip_path)
   end
 
   execute 'systemctl daemon-reload' do

@@ -1,6 +1,6 @@
 pip 'supervisor' do
   user 'root'
-  version '4.0.3'
+  version '4.1.0'
 end
 
 template '/etc/supervisord.conf' do
