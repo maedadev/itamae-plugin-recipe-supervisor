@@ -7,7 +7,7 @@ when /rhel-6\.(.*?)/
     mode '755'
   end
 when /rhel-7\.(.*?)/
-  pip_path = run_command('which pip').stdout
+  pip_path = run_command('which pip', user: 'root').stdout
   template '/etc/systemd/system/supervisord.service' do
     user 'root'
     owner 'root'
