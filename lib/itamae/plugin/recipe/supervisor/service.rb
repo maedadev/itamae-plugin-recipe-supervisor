@@ -6,7 +6,7 @@ when /rhel-6\.(.*?)/
     group 'root'
     mode '755'
   end
-when /rhel-7\.(.*?)/
+when /rhel-[7-8]\.(.*?)/
   pip_path = run_command('which pip', user: 'root').stdout
   template '/etc/systemd/system/supervisord.service' do
     user 'root'
